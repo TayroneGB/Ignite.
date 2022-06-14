@@ -2,18 +2,18 @@ import { Avatar } from './Avatar';
 import { Commene } from './comment';
 import styles from './Post.module.css';
 
-export function Post() {
+export function Post({ author, publishedAt }) {
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                   <Avatar src="https://github.com/TayroneGB.png" />
+                   <Avatar src={author.avatarUrl}/>
                     <div className={styles.authorInfo}>
-                        <strong>Tayrone Guimarães</strong>
-                        <span>Web Developer</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.role}</span>
                     </div>
                 </div>
-                <time title='10 de junho ás 15:30h' dateTime="2022-08-06"> Publicado há 1h</time>
+                <time title='10 de junho ás 15:30h' dateTime="2022-08-06">{publishedAt}</time>
             </header>
 
             <div className={styles.content}>
